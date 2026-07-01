@@ -52,7 +52,7 @@ export default function LoadingScreen({ visible, onExited }: Props) {
               backgroundImage: `url('/footerbg.png')`,
               backgroundSize: "300px",
               backgroundRepeat: "repeat",
-              opacity: 0.1,
+              opacity: 0.09,
             }}
           />
 

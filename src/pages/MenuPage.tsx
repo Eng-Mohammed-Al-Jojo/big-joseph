@@ -47,7 +47,7 @@ export default function MenuPage() {
           backgroundImage: `url('/footerbg.png')`,
           backgroundSize: '200px',
           backgroundRepeat: 'repeat',
-          opacity: 0.1
+          opacity: 0.07
         }}
       />
       {/* Loading */}
