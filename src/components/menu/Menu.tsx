@@ -269,7 +269,7 @@ export default function Menu({ onLoadingChange, onFeaturedCheck, onFeaturedItems
             {/* Logo or Title Placeholder if needed */}
 
             {/* Big Joseph Premium Search Bar */}
-            <div className="w-3/4 max-w-xl mx-auto relative group mb-8 ">
+            <div className="w-full max-w-xl mx-auto relative group mb-8 ">
               <div className="absolute right-5 top-1/2 -translate-y-1/2 transition-colors"
                 style={{ color: "rgba(139,103,38,0.35)" }}
               >
