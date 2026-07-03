@@ -23,19 +23,21 @@ export default function CategoryNavigation({
       const container = activeRef.current.closest(".overflow-x-auto");
       if (container) {
         const activeEl = activeRef.current;
+        const containerRect = container.getBoundingClientRect();
+        const activeRect = activeEl.getBoundingClientRect();
+        
         const scrollLeft =
-          activeEl.offsetLeft -
-          container.clientWidth / 2 +
-          activeEl.clientWidth / 2;
+          container.scrollLeft +
+          (activeRect.left - containerRect.left) -
+          (containerRect.width / 2 - activeRect.width / 2);
+          
         container.scrollTo({ left: scrollLeft, behavior: "smooth" });
       }
     }
   }, [activeId]);
 
   return (
-    /* ─── Floating Pill Bar ─────────────────────────────────────────
-       No heavy glass: just a paper-thin border on the canvas itself  */
-    <div className="relative mb-8 sm:mb-10 max-w-2xl mx-auto">
+    <div className="relative mb-8 sm:mb-10 max-w-2xl mx-auto w-full">
       {/* Hairline top accent — barely visible gold line */}
       <div
         className="absolute -top-px left-10 right-10 h-px"
@@ -46,7 +48,7 @@ export default function CategoryNavigation({
       />
 
       <div
-        className="overflow-x-auto no-scrollbar py-2 px-1"
+        className="overflow-x-auto no-scrollbar py-2 px-1 w-full"
         style={{
           /* Single canvas — no background box, no border radius box */
         }}
@@ -104,18 +106,17 @@ function TabButton({ label, isActive, onClick, isAll, refProp }: TabButtonProps)
         relative h-10 px-5 rounded-full text-xs sm:text-sm font-bold
         whitespace-nowrap transition-all duration-300 flex items-center gap-1.5
         cursor-pointer select-none
-        ${
-          isActive
-            ? "text-white"
-            : [
-                "text-primary",
-                "bg-white/80",
-                "border border-primary/20",
-                "hover:border-burgundy/40",
-                "hover:text-burgundy",
-                "hover:bg-white",
-                "shadow-sm",
-              ].join(" ")
+        ${isActive
+          ? "text-white"
+          : [
+            "text-primary",
+            "bg-white/80",
+            "border border-primary/20",
+            "hover:border-burgundy/40",
+            "hover:text-burgundy",
+            "hover:bg-white",
+            "shadow-sm",
+          ].join(" ")
         }
       `}
     >

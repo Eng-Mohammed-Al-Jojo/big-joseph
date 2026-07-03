@@ -370,8 +370,11 @@ const ItemSection: React.FC<Props> = ({ categories, subcategories, items, setPop
 
 
       {/* Adding Form */}
-      <div className="bg-white/95 backdrop-blur-xl p-8 sm:p-10 border border-white shadow-premium relative overflow-hidden group rounded-[3rem]">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-(--color-primary)/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl group-hover:bg-(--color-primary)/10 transition-colors pointer-events-none duration-1000" />
+      <div className="bg-white/95 backdrop-blur-xl p-8 sm:p-10 border border-white shadow-premium relative group rounded-[3rem]">
+        {/* Decorative background accents wrapper */}
+        <div className="absolute inset-0 rounded-[3rem] overflow-hidden pointer-events-none z-0">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-(--color-primary)/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl group-hover:bg-(--color-primary)/10 transition-colors duration-1000" />
+        </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-10">
           <div className="flex items-center gap-6">

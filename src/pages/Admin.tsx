@@ -6,7 +6,7 @@ import {
   FiLayout, FiDatabase, FiLock, FiMail, FiUser, FiDollarSign
 } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { normalizeIngredients } from "../utils/stringUtils";
 
@@ -31,7 +31,7 @@ import PaymentMethodsModal from "../components/admin/PaymentMethodsModal";
 export default function Admin() {
   const { t, i18n } = useTranslation();
   const location = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [authOk, setAuthOk] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -458,12 +458,12 @@ export default function Admin() {
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_12px_rgba(16,185,129,0.5)]" />
                   <p className="text-(--color-primary)/50 text-[9px] uppercase font-black tracking-[0.2em]">{t('admin.dashboard_active')}</p>
                 </div>
-                <button
+                {/* <button
                   onClick={() => navigate("/admin/orders")}
                   className="flex items-center gap-2 px-5 py-2 rounded-[1.2rem] bg-(--color-primary) text-white text-[11px] font-black hover:shadow-2xl hover:shadow-(--color-primary)/30 transition-all active:scale-95 uppercase tracking-widest"
                 >
                   <FiPackage className="text-xs" /> {t('admin.orders')}
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
